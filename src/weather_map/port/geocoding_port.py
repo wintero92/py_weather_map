@@ -1,37 +1,34 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 
 from weather_map.domain.model.location import Location
 
 
-class GeocodingDrivenPort(ABC):
-
-    """Driven port abstracting geocoding operations.
-
-    A base class for geocoding service ports that defines a standard interface for
-    geocoding operations.
-
-    This class provides a template method `search` that calls the `_search` method, which must be implemented
-    by subclasses to provide the actual geocoding functionality.
+class GeocodingDrivenPort:
+    """GeocodingDrivenPort is an interface for geocoding services.
 
     Methods
     -------
-    - search: Template method that calls the `_search` method to perform a geocoding search.
-    - _search: Abstract method that subclasses must implement to provide geocoding search functionality.
+        search(search_pattern: str) -> Location:
+            Public method that delegates the search operation to the _search method.
+
+    Abstract Methods:
+        _search(search_pattern: str) -> Location:
+            Abstract method to be implemented by subclasses for performing the geocoding search operation.
 
     """
 
     def search(self: "GeocodingDrivenPort", *, search_pattern: str) -> Location:
-        """Perform a geocoding search using the provided search pattern.
+        """Public method to search for a location using the given search pattern.
 
-        This is a template method that calls the `_search` method, which must be implemented by subclasses.
+        Args:
+        ----
+            search_pattern (str): The pattern to search for the location.
 
-        Parameters
-        ----------
-        - search_pattern: A string containing the search pattern or address to geocode.
-
-        Returns
+        Returns:
         -------
-        - Location: The geocoded location corresponding to the search pattern.
+            Location: The location object resulting from the search.
+
+        Delegates the actual search operation to the _search method.
 
         """
         return self._search(search_pattern=search_pattern)

@@ -14,4 +14,4 @@ def test_search(nominatim_instance: NominatimAdapter) -> None:
 
     assert isinstance(location, Location)
     assert location.address == "Sicilia, Italia"
-    assert location.coordiante == Coordinate(latitude=37.587794, longitude=14.155048)
+    assert location.coordinate == Coordinate(latitude=37.587794, longitude=14.155048)

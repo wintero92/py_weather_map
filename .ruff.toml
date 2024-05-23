@@ -4,11 +4,7 @@ target-version = "py312"
 
 lint.select = ["ALL"]
 lint.ignore = [
-    # "D100",
-    # "D104",
-    # "D211",
-    # "D213",
-    # "D417",
+
     "D100",
     "D211",
     "D213",
