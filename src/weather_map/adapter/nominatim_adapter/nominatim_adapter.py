@@ -7,7 +7,6 @@ from weather_map.port.geocoding_port import GeocodingDrivenPort
 
 
 class NominatimAdapter(GeocodingDrivenPort):
-
     """Adapter class for the Nominatim geocoding service.
 
     This class implements the GeocodingDrivenPort interface and provides a method to
