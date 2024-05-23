@@ -1,8 +1,8 @@
+import folium
 from weather_map.adapter.osmnx_compute_border_adapter.osmnx_compute_border_adapter import (
     OsmnxComputeBorderAdapter,
 )
 from weather_map.domain.model.nominatim import Nominatim
-import folium
 
 italy_border = OsmnxComputeBorderAdapter().compute_border(nominatim=Nominatim.ITALY)
 

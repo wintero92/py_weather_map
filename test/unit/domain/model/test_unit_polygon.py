@@ -1,7 +1,9 @@
 import pytest
 from shapely.geometry.polygon import Polygon as ShapelyPolygon
-from weather_map.domain.model.bounds import Bounds
 from weather_map.domain.model.polygon import Polygon, polygon_factory
+
+# S101 Use of `assert` detected
+# ruff: noqa: S101
 
 
 def test_bounds_factory_from_shapely(shapely_polygon: ShapelyPolygon) -> None:
@@ -22,7 +24,9 @@ def test_bounds_factory_from_shapely(shapely_polygon: ShapelyPolygon) -> None:
     assert result.longitude == [
         coordinate[0] for coordinate in shapely_polygon.exterior.coords
     ]
-    assert result.latitude == [coordinate[1] for coordinate in shapely_polygon.exterior.coords]
+    assert result.latitude == [
+        coordinate[1] for coordinate in shapely_polygon.exterior.coords
+    ]
 
 
 def test_bounds_factory_not_known_input() -> None:

@@ -1,5 +1,5 @@
-import osmnx as ox
 import folium
+import osmnx as ox
 
 # Get the border data for Italy
 gdf = ox.geometries_from_place("Sicily", {"boundary": "administrative"})

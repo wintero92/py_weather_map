@@ -1,6 +1,5 @@
 import osmnx
-import folium
-from shapely.geometry import Polygon, MultiPolygon
+from shapely.geometry import MultiPolygon, Polygon
 from weather_map.utils.nominatim import Nominatim
 
 
@@ -16,8 +15,6 @@ a = border.geoms[0].exterior.coords
 print(type(a))
 print(a[0][0])
 print(a[0])
-
-
 
 
 # Initialize the map centered around Italy

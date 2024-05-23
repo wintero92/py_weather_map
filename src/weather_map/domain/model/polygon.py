@@ -1,15 +1,14 @@
 from pydantic import BaseModel
-from weather_map.domain.model.bounds import Bounds, bounds_factory
-
 from shapely.geometry.polygon import Polygon as ShapelyPolygon
+from weather_map.domain.model.bounds import Bounds, bounds_factory
+from weather_map.domain.model.coordinate import Coordinate
 
 
 class Polygon(BaseModel):
-    longitude: list[float]
-    latitude: list[float]
     area: float
-    centroid: tuple[float, float]
     bounds: Bounds
+    centroid: Coordinate
+    coordinates: list[Coordinate]
 
 
 def _shepely_to_polygon(shapely_polygon: ShapelyPolygon) -> Polygon:

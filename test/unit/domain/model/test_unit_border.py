@@ -1,9 +1,10 @@
 import pytest
-from shapely.geometry.polygon import Polygon as ShapelyPolygon
 from shapely.geometry.multipolygon import MultiPolygon as ShapelyMultiPolygon
-from weather_map.domain.model.bounds import Bounds
-from weather_map.domain.model.polygon import Polygon, polygon_factory
+from shapely.geometry.polygon import Polygon as ShapelyPolygon
 from weather_map.domain.model.border import Border, border_factory
+
+# S101 Use of `assert` detected
+# ruff: noqa: S101
 
 
 def test_border_factory_from_shapely_polygon(shapely_polygon: ShapelyPolygon) -> None:

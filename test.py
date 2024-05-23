@@ -1,8 +1,8 @@
-import pandas as pd
-import numpy as np
-from scipy.interpolate import griddata
 import folium
+import numpy as np
+import pandas as pd
 from folium.plugins import HeatMap
+from scipy.interpolate import griddata
 
 # Load the GPS coordinates and weather data
 gps_data = pd.read_csv("gps_coordinates.csv")

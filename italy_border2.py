@@ -1,6 +1,6 @@
-import osmnx as ox
 import folium
-from shapely.geometry import Polygon, MultiPolygon
+import osmnx as ox
+from shapely.geometry import MultiPolygon, Polygon
 
 # Configure osmnx to get the boundary for Italy
 place_name = "Italy"

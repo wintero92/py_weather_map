@@ -1,6 +1,6 @@
 import json
-from pathlib import Path
 import re
+from pathlib import Path
 
 
 def normalize_name(name: str) -> str:
@@ -19,7 +19,7 @@ def main() -> None:
     for english_name in english_names:
         normalized_english_name = normalize_name(english_name)
         enum_content.append(f'{normalized_english_name} = "{english_name}"')
-    enum_content = list(sorted(enum_content))
+    enum_content = sorted(enum_content)
 
     with Path.open(Path("data/nominatim.py"), mode="w", encoding="utf-8") as file:
         file.write("from enum import StrEnum\n")

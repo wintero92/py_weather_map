@@ -1,5 +1,5 @@
-import geopandas as gpd
 import folium
+import geopandas as gpd
 
 # Load the naturalearth_lowres dataset
 world = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))

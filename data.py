@@ -10,7 +10,7 @@ temperatures = np.random.uniform(10, 30, 100)  # Synthetic temperature data
 # Create a DataFrame for the synthetic data
 gps_data = pd.DataFrame({"latitude": latitudes, "longitude": longitudes})
 weather_data = pd.DataFrame(
-    {"latitude": latitudes, "longitude": longitudes, "temperature": temperatures}
+    {"latitude": latitudes, "longitude": longitudes, "temperature": temperatures},
 )
 
 # Save to CSV files (optional, if you want to reuse the data)

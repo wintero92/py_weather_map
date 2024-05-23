@@ -1,16 +1,16 @@
 from pydantic import BaseModel
-from weather_map.domain.model.bounds import Bounds, bounds_factory
-from weather_map.domain.model.polygon import Polygon
-from shapely.geometry.polygon import Polygon as ShapelyPolygon
-from weather_map.domain.model.polygon import Polygon, polygon_factory
 from shapely.geometry.multipolygon import MultiPolygon as ShapelyMultiPolygon
+from shapely.geometry.polygon import Polygon as ShapelyPolygon
+from weather_map.domain.model.bounds import Bounds, bounds_factory
+from weather_map.domain.model.polygon import Polygon, polygon_factory
+from weather_map.domain.model.coordinate import Coordinate
 
 
 class Border(BaseModel):
-    polygons: list[Polygon]
     area: float
-    centroid: tuple[float, float]
     bounds: Bounds
+    centroid: Coordinate
+    polygons: list[Polygon]
 
     @property
     def geojson(self):
@@ -19,7 +19,7 @@ class Border(BaseModel):
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
-                    zip(polygon.longitude, polygon.latitude)
+                    zip(polygon.longitude, polygon.latitude, strict=False)
                     for polygon in self.polygons
                 ],
             },

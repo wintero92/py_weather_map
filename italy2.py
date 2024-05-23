@@ -1,12 +1,10 @@
-import geopandas as gpd
-import osmnx as ox
-from shapely.geometry import Polygon, MultiPolygon, Point
-from shapely.ops import unary_union
+import folium
 import numpy as np
+import osmnx as ox
 import pandas as pd
 from scipy.spatial import Delaunay
-import folium
-from folium.plugins import HeatMap
+from shapely.geometry import MultiPolygon, Point
+from shapely.ops import unary_union
 
 # Constants
 MILE_IN_KM = 1.60934
@@ -65,7 +63,8 @@ def triangles_to_geojson(points, triangles):
 
 # Convert triangulation to GeoJSON
 triangles_geojson = triangles_to_geojson(
-    weather_data[["latitude", "longitude"]].values, triangulation.simplices
+    weather_data[["latitude", "longitude"]].values,
+    triangulation.simplices,
 )
 
 # Initialize the map centered around Italy

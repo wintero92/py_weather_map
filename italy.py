@@ -1,8 +1,6 @@
-import pandas as pd
-import numpy as np
-from scipy.spatial import Delaunay
 import folium
-import matplotlib.tri as tri
+import pandas as pd
+from scipy.spatial import Delaunay
 
 # Load the synthetic data
 gps_data = pd.read_csv("gps_coordinates_italy.csv")

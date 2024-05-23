@@ -1,11 +1,6 @@
-import osmnx as ox
 import folium
-from shapely.geometry import Polygon, MultiPolygon
-from pathlib import Path
-import json
-
-
-check_place_name("Italy")
+import osmnx as ox
+from shapely.geometry import MultiPolygon, Polygon
 
 place_name = "Italy"
 

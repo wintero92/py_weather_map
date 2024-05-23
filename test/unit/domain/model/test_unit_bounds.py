@@ -2,6 +2,9 @@ import pytest
 from shapely.geometry.polygon import Polygon
 from weather_map.domain.model.bounds import Bounds, bounds_factory
 
+# S101 Use of `assert` detected
+# ruff: noqa: S101
+
 
 def test_bounds_factory_from_shapely(shapely_polygon: Polygon) -> None:
     result = bounds_factory(input=shapely_polygon)
