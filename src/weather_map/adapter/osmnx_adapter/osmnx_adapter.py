@@ -2,10 +2,11 @@ import osmnx
 from weather_map.adapter.osmnx_adapter.factory import shapely_to_border
 from weather_map.domain.model.border import Border
 from weather_map.domain.model.location import Location
-from weather_map.port.compute_border import ComputeBorder
+from weather_map.port.compute_border_port import ComputeBorderPort
 
 
-class OsmnxAdapter(ComputeBorder):
+class OsmnxAdapter(ComputeBorderPort):
+
     """OsmnxAdapter is an adapter class that uses the osmnx library to compute the
     border of a given location.
 

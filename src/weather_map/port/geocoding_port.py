@@ -4,6 +4,7 @@ from weather_map.domain.model.location import Location
 
 
 class GeocodingDrivenPort:
+
     """GeocodingDrivenPort is an interface for geocoding services.
 
     Methods

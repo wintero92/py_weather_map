@@ -2,6 +2,7 @@ from pydantic import BaseModel, Field
 
 
 class Coordinate(BaseModel):
+
     """A model representing geographic coordinates with latitude and longitude.
 
     This model uses Pydantic for data validation and ensures that the latitude
