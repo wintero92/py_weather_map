@@ -4,7 +4,8 @@ from weather_map.domain.model.border import Border
 from weather_map.domain.model.location import Location
 
 
-class ComputeBorder:
+class ComputeBorderPort:
+
     """ComputeBorder is an interface for computing the border of a given location.
 
     Methods
@@ -18,7 +19,7 @@ class ComputeBorder:
 
     """
 
-    def compute_border(self: "ComputeBorder", *, location: Location) -> Border:
+    def compute_border(self: "ComputeBorderPort", *, location: Location) -> Border:
         """Compute the border for a given Location instance.
 
         Args:
@@ -33,5 +34,5 @@ class ComputeBorder:
         return self._compute_border(location=location)
 
     @abstractmethod
-    def _compute_border(self: "ComputeBorder", *, location: Location) -> Border:
+    def _compute_border(self: "ComputeBorderPort", *, location: Location) -> Border:
         raise NotImplementedError

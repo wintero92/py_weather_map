@@ -4,6 +4,7 @@ from weather_map.domain.model.coordinate import Coordinate
 
 
 class Polygon(BaseModel):
+
     """Polygon class represents a geographical polygon with specific attributes.
 
     Attributes

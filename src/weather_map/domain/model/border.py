@@ -5,6 +5,7 @@ from weather_map.domain.model.polygon import Polygon
 
 
 class Border(BaseModel):
+
     """Border class represents a geographical border with specific attributes.
 
     Attributes

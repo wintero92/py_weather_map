@@ -3,6 +3,7 @@ from weather_map.domain.model.coordinate import Coordinate
 
 
 class Bounds(BaseModel):
+
     """A class to represent the geographical bounds defined by minimum and maximum
     coordinates.
 
